@@ -3,25 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>A Code Solution SA | Digital Asset Vault & Lead System</title>
+    <title>A Code Solution SA | Digital Asset Vault</title>
     
-    <meta name="google-site-verification" content="google4c6825d87fc5796f">
-    <meta name="description" content="A Code Solution SA: High-performance web lead systems and custom business automation tools.">
-
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap" rel="stylesheet">
 
     <style>
         body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #020617; color: #f8fafc; }
-        .glass-nav { background: rgba(2, 6, 23, 0.8); backdrop-filter: blur(20px); border-bottom: 1px solid rgba(255,255,255,0.05); }
-        .tool-card { transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); border: 1px solid rgba(255,255,255,0.05); }
-        .tool-card:hover { transform: translateY(-10px); border-color: #3b82f6; box-shadow: 0 0 30px rgba(59, 130, 246, 0.15); }
+        .glass-nav { background: rgba(2, 6, 23, 0.85); backdrop-filter: blur(20px); border-bottom: 1px solid rgba(255,255,255,0.05); }
+        .tool-card { transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); border: 1px solid rgba(255,255,255,0.05); background: rgba(255,255,255,0.02); }
+        .tool-card:hover { transform: translateY(-10px); border-color: #3b82f6; box-shadow: 0 0 40px rgba(59, 130, 246, 0.1); }
         .gradient-text { background: linear-gradient(135deg, #fff 0%, #3b82f6 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
         .custom-scrollbar::-webkit-scrollbar { width: 6px; }
         .custom-scrollbar::-webkit-scrollbar-thumb { background: #1e293b; border-radius: 10px; }
-        .basket-badge { animation: scaleIn 0.3s ease; }
-        @keyframes scaleIn { 0% { transform: scale(0); } 100% { transform: scale(1); } }
     </style>
 </head>
 <body class="antialiased">
@@ -32,206 +27,151 @@
                 <div class="w-10 h-10 bg-blue-600 rounded-lg flex items-center justify-center font-black text-xl">A</div>
                 <span class="font-black tracking-tighter text-xl uppercase">Code Solution <span class="text-blue-600">SA</span></span>
             </div>
-            
-            <div class="flex items-center gap-6">
-                <button onclick="toggleBasket()" class="relative p-2 hover:bg-white/5 rounded-full transition">
-                    <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/></svg>
-                    <span id="basket-count" class="absolute -top-1 -right-1 bg-blue-600 text-[10px] font-bold px-2 py-0.5 rounded-full hidden">0</span>
-                </button>
-                <a href="tel:+27674099143" class="hidden md:block text-xs font-bold hover:text-blue-500 transition">067 409 9143</a>
-            </div>
+            <button onclick="toggleBasket()" class="relative p-2 hover:bg-white/5 rounded-full transition">
+                <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/></svg>
+                <span id="basket-count" class="absolute -top-1 -right-1 bg-blue-600 text-[10px] font-bold px-2 py-0.5 rounded-full hidden">0</span>
+            </button>
         </div>
     </nav>
 
-    <header class="pt-40 pb-20 px-6">
-        <div class="max-w-5xl mx-auto text-center">
-            <span class="inline-block px-4 py-1.5 rounded-full bg-blue-600/10 text-blue-500 text-[10px] font-black uppercase tracking-widest mb-6">Engineered Asset Vault v2.6</span>
-            <h1 class="text-6xl md:text-8xl font-black tracking-tighter mb-8 leading-[0.9]">
-                Automate Your <br> <span class="gradient-text">Business Logic.</span>
-            </h1>
-            <p class="text-slate-400 text-lg max-w-2xl mx-auto font-medium">
-                High-performance digital tools, lead generation systems, and custom automation scripts built for the South African market.
-            </p>
-        </div>
+    <header class="pt-40 pb-20 px-6 text-center">
+        <h1 class="text-5xl md:text-7xl font-black tracking-tighter mb-4 uppercase italic">The Tool <span class="text-blue-600">Vault.</span></h1>
+        <p class="text-slate-500 font-bold uppercase tracking-[0.3em] text-[10px]">Select Your Assets Below For Immediate Dispatch</p>
     </header>
 
-    <section class="py-20 px-6 max-w-7xl mx-auto" id="vault">
-        <div class="flex items-center gap-4 mb-12">
-            <div class="h-px bg-white/10 flex-grow"></div>
-            <h2 class="text-xs font-black uppercase tracking-[0.4em] text-slate-500">Available Assets</h2>
-            <div class="h-px bg-white/10 flex-grow"></div>
-        </div>
-
-        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <div class="tool-card bg-white/[0.02] p-8 rounded-[2.5rem]">
-                <div class="text-blue-500 mb-6 font-black text-sm">#001</div>
-                <h3 class="text-2xl font-black mb-3">Technical Dispatch System</h3>
-                <p class="text-slate-500 text-sm mb-8 leading-relaxed">Full HTML/JS lead capture with Telegram API integration. Optimized for mobile service providers.</p>
-                <div class="flex justify-between items-center">
-                    <span class="text-2xl font-black text-white">R 1,250</span>
-                    <button onclick="addToBasket('Technical Dispatch System', 1250)" class="bg-blue-600 hover:bg-white hover:text-black text-white px-6 py-3 rounded-2xl font-bold text-xs transition-all uppercase tracking-widest">Add to Basket</button>
-                </div>
+    <section class="max-w-7xl mx-auto px-6 pb-40">
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6" id="tools-grid">
             </div>
-
-            <div class="tool-card bg-white/[0.02] p-8 rounded-[2.5rem]">
-                <div class="text-blue-500 mb-6 font-black text-sm">#002</div>
-                <h3 class="text-2xl font-black mb-3">Utility Metering Dashboard</h3>
-                <p class="text-slate-500 text-sm mb-8 leading-relaxed">Frontend logic for water and electrical sub-metering visualization. SABS standard compliant UI.</p>
-                <div class="flex justify-between items-center">
-                    <span class="text-2xl font-black text-white">R 2,800</span>
-                    <button onclick="addToBasket('Utility Metering Dashboard', 2800)" class="bg-blue-600 hover:bg-white hover:text-black text-white px-6 py-3 rounded-2xl font-bold text-xs transition-all uppercase tracking-widest">Add to Basket</button>
-                </div>
-            </div>
-
-            <div class="tool-card bg-white/[0.02] p-8 rounded-[2.5rem]">
-                <div class="text-blue-500 mb-6 font-black text-sm">#003</div>
-                <h3 class="text-2xl font-black mb-3">Automated SEO Scraper</h3>
-                <p class="text-slate-500 text-sm mb-8 leading-relaxed">Custom Python/Node.js script to monitor competitor ranking in the KZN Engineering sector.</p>
-                <div class="flex justify-between items-center">
-                    <span class="text-2xl font-black text-white">R 950</span>
-                    <button onclick="addToBasket('Automated SEO Scraper', 950)" class="bg-blue-600 hover:bg-white hover:text-black text-white px-6 py-3 rounded-2xl font-bold text-xs transition-all uppercase tracking-widest">Add to Basket</button>
-                </div>
-            </div>
-        </div>
     </section>
 
-    <div id="basket-sidebar" class="fixed top-0 right-0 h-full w-full md:w-[450px] bg-[#050a18] z-[200] transform translate-x-full transition-transform duration-500 shadow-[-50px_0_100px_rgba(0,0,0,0.5)] border-l border-white/5 flex flex-col">
-        <div class="p-8 flex justify-between items-center border-b border-white/5">
-            <h2 class="text-2xl font-black uppercase italic">Selected Assets</h2>
-            <button onclick="toggleBasket()" class="p-2 hover:bg-white/5 rounded-xl transition">
-                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M6 18L18 6M6 6l12 12"/></svg>
-            </button>
+    <div id="basket-sidebar" class="fixed top-0 right-0 h-full w-full md:w-[450px] bg-[#050a18] z-[200] transform translate-x-full transition-transform duration-500 shadow-2xl border-l border-white/5 flex flex-col">
+        <div class="p-8 border-b border-white/5 flex justify-between items-center">
+            <h2 class="text-xl font-black uppercase italic">Your Selection</h2>
+            <button onclick="toggleBasket()" class="text-slate-500 hover:text-white">CLOSE</button>
         </div>
-
-        <div id="basket-items" class="flex-grow overflow-y-auto p-8 custom-scrollbar">
+        <div id="basket-items" class="flex-grow overflow-y-auto p-8 custom-scrollbar"></div>
+        <div class="p-8 bg-black/40 border-t border-white/5">
+            <div class="flex justify-between mb-6">
+                <span class="text-slate-500 font-black text-[10px] uppercase">Total Due</span>
+                <span id="basket-total" class="text-2xl font-black text-blue-500">R 0</span>
             </div>
-
-        <div id="checkout-section" class="p-8 bg-black/40 border-t border-white/5">
-            <div class="flex justify-between items-center mb-6">
-                <span class="text-slate-500 font-bold uppercase text-[10px] tracking-widest">Investment Total</span>
-                <span id="basket-total" class="text-3xl font-black text-blue-500">R 0.00</span>
-            </div>
-
             <form id="checkoutForm" class="space-y-4">
-                <input type="text" id="clientName" placeholder="Company / Individual Name" required class="w-full bg-white/5 p-4 rounded-xl border border-white/10 outline-none focus:border-blue-600 font-bold text-sm">
-                <input type="tel" id="clientPhone" placeholder="WhatsApp Number" required class="w-full bg-white/5 p-4 rounded-xl border border-white/10 outline-none focus:border-blue-600 font-bold text-sm">
+                <input type="text" id="clientName" placeholder="Full Name / Company" required class="w-full bg-white/5 p-4 rounded-xl border border-white/10 text-sm outline-none focus:border-blue-600">
+                <input type="tel" id="clientPhone" placeholder="WhatsApp Number" required class="w-full bg-white/5 p-4 rounded-xl border border-white/10 text-sm outline-none focus:border-blue-600">
                 
-                <div class="bg-blue-600/10 border border-blue-600/20 p-5 rounded-2xl space-y-2 mt-4">
-                    <p class="text-[10px] font-black text-blue-400 uppercase tracking-widest">FNB Business Account</p>
-                    <p class="text-sm font-bold">A Code Solution SA</p>
-                    <p class="text-sm">Account: 62915478332</p>
-                    <p class="text-sm">Branch Code: 250655</p>
-                    <p class="text-[9px] text-slate-400 italic mt-2">Note: Please send POP to acodesolutions@gmail.com once submitted.</p>
+                <div class="bg-blue-600/5 p-4 rounded-xl border border-blue-600/20 text-[11px] mb-4">
+                    <p class="font-black text-blue-400 uppercase mb-1">FNB Payment Logic</p>
+                    <p>A Code Solution SA | Acc: 62915478332</p>
+                    <p>Branch: 250655 | Ref: [Your Name]</p>
+                    <p class="mt-2 text-slate-500 italic">Proof of Payment to: acodesolutions@gmail.com</p>
                 </div>
 
-                <button type="submit" id="submitOrderBtn" class="w-full bg-blue-600 hover:bg-white hover:text-black py-5 rounded-2xl font-black uppercase tracking-[0.2em] text-sm transition-all shadow-xl">
-                    Request Dispatch & Invoicing
-                </button>
+                <button type="submit" id="submitOrderBtn" class="w-full bg-blue-600 hover:bg-white hover:text-black py-4 rounded-xl font-black uppercase text-xs tracking-widest transition-all">Submit Lead & Pay</button>
             </form>
         </div>
     </div>
 
-    <footer class="py-20 px-6 border-t border-white/5 text-center">
-        <div class="max-w-7xl mx-auto">
-            <p class="text-slate-600 text-[10px] font-black uppercase tracking-[0.5em] mb-4">A Code Solution SA © 2026</p>
-            <p class="text-slate-400 text-sm font-bold">KZN HQ | 067 409 9143 | acodesolutions@gmail.com</p>
-        </div>
-    </footer>
-
     <script>
+        const tools = [
+            { id: 1, name: "Web Lead System v2.6", desc: "Full Telegram-integrated lead capture architecture.", price: 1500 },
+            { id: 2, name: "PDF to Excel Converter", desc: "Batch convert engineering bills and invoices to CSV.", price: 450 },
+            { id: 3, name: "Acoustic Sonar Logic", desc: "Algorithm for processing underground leak frequencies.", price: 3200 },
+            { id: 4, name: "Prepaid Token Generator", desc: "Sandbox environment for testing sub-metering codes.", price: 1800 },
+            { id: 5, name: "Bulk WhatsApp Dispatch", desc: "Broadcast tool for maintenance notices and alerts.", price: 850 },
+            { id: 6, name: "SABS COC Auto-Form", desc: "Digital Electrical COC generator with cloud storage.", price: 1100 },
+            { id: 7, name: "Smart Meter Dashboard", desc: "Real-time visualization for water/power consumption.", price: 2500 },
+            { id: 8, name: "Industrial SEO Scraper", desc: "Find ranking opportunities in KZN construction niche.", price: 700 },
+            { id: 9, name: "Remote DB Monitor", desc: "Safety alerts for remote DB boards and power grids.", price: 1400 },
+            { id: 10, name: "Firebase Auth Boilerplate", desc: "Secure login system for your business web apps.", price: 900 }
+        ];
+
         let basket = [];
         const TG_TOKEN = "8487737066:AAFvi5uUgSziOlE-qRlif7lM_HHlzFGn74I";
         const CHAT_ID = "8187670531";
 
+        // Render Tools
+        const grid = document.getElementById('tools-grid');
+        tools.forEach(tool => {
+            grid.innerHTML += `
+                <div class="tool-card p-8 rounded-[2rem]">
+                    <div class="text-blue-500 font-black text-[10px] mb-4">ASSET #${tool.id}</div>
+                    <h3 class="text-xl font-black mb-2">${tool.name}</h3>
+                    <p class="text-slate-500 text-xs leading-relaxed mb-6">${tool.desc}</p>
+                    <div class="flex justify-between items-center border-t border-white/5 pt-6">
+                        <span class="font-black text-lg text-white">R ${tool.price}</span>
+                        <button onclick="addToBasket('${tool.name}', ${tool.price})" class="bg-blue-600/10 hover:bg-blue-600 text-blue-500 hover:text-white px-5 py-2 rounded-lg text-[10px] font-black uppercase transition-all">Add</button>
+                    </div>
+                </div>
+            `;
+        });
+
         function toggleBasket() {
-            const sidebar = document.getElementById('basket-sidebar');
-            sidebar.classList.toggle('translate-x-full');
+            document.getElementById('basket-sidebar').classList.toggle('translate-x-full');
         }
 
         function addToBasket(name, price) {
             basket.push({ name, price });
-            updateBasketUI();
-            
-            // Visual feedback
-            const count = document.getElementById('basket-count');
-            count.classList.remove('hidden');
-            count.innerText = basket.length;
-            
-            confetti({
-                particleCount: 50,
-                spread: 30,
-                origin: { y: 0.9, x: 0.9 },
-                colors: ['#3b82f6', '#ffffff']
-            });
+            updateUI();
+            confetti({ particleCount: 40, spread: 50, origin: { y: 0.9, x: 0.9 }, colors:['#3b82f6'] });
         }
 
         function removeFromBasket(index) {
             basket.splice(index, 1);
-            updateBasketUI();
-            document.getElementById('basket-count').innerText = basket.length;
-            if(basket.length === 0) document.getElementById('basket-count').classList.add('hidden');
+            updateUI();
         }
 
-        function updateBasketUI() {
+        function updateUI() {
             const container = document.getElementById('basket-items');
             const totalEl = document.getElementById('basket-total');
-            container.innerHTML = '';
+            const count = document.getElementById('basket-count');
             
+            container.innerHTML = '';
             let total = 0;
-            basket.forEach((item, index) => {
+            
+            basket.forEach((item, i) => {
                 total += item.price;
                 container.innerHTML += `
-                    <div class="flex justify-between items-center mb-4 bg-white/[0.03] p-4 rounded-2xl border border-white/5">
-                        <div>
-                            <div class="font-bold text-sm">${item.name}</div>
-                            <div class="text-blue-500 font-black text-xs">R ${item.price}</div>
-                        </div>
-                        <button onclick="removeFromBasket(${index})" class="text-slate-500 hover:text-red-500 transition">
-                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M9 2a1 1 0 00-.894.553L7.382 4H4a1 1 0 000 2v10a2 2 0 002 2h8a2 2 0 002-2V6a1 1 0 100-2h-3.382l-.724-1.447A1 1 0 0011 2H9zM7 8a1 1 0 012 0v6a1 1 0 11-2 0V8zm5-1a1 1 0 00-1 1v6a1 1 0 102 0V8a1 1 0 00-1-1z" clip-rule="evenodd"/></svg>
-                        </button>
+                    <div class="flex justify-between items-center mb-4 bg-white/5 p-4 rounded-xl">
+                        <span class="text-xs font-bold">${item.name}</span>
+                        <button onclick="removeFromBasket(${i})" class="text-red-500 font-black">×</button>
                     </div>
                 `;
             });
-            totalEl.innerText = `R ${total.toLocaleString()}`;
+
+            totalEl.innerText = `R ${total}`;
+            count.innerText = basket.length;
+            count.classList.toggle('hidden', basket.length === 0);
         }
 
         document.getElementById('checkoutForm').onsubmit = async (e) => {
             e.preventDefault();
-            if(basket.length === 0) return alert('Your basket is empty!');
+            if(basket.length === 0) return alert('Select a tool first.');
 
             const btn = document.getElementById('submitOrderBtn');
             const name = document.getElementById('clientName').value;
             const phone = document.getElementById('clientPhone').value;
             const total = document.getElementById('basket-total').innerText;
-
-            btn.innerText = "GENERATING DISPATCH MANIFEST...";
+            
+            btn.innerText = "INITIALIZING DISPATCH...";
             btn.disabled = true;
 
-            const toolList = basket.map(item => `• ${item.name}`).join('\n');
-            const message = `🚀 <b>NEW ASSET SALE: A CODE SOLUTION SA</b>\n━━━━━━━━━━━━━━━━━━\n👤 <b>Client:</b> ${name}\n📞 <b>WhatsApp:</b> ${phone}\n💰 <b>Total Value:</b> ${total}\n\n📦 <b>ASSETS REQUESTED:</b>\n${toolList}\n━━━━━━━━━━━━━━━━━━\n🏦 <i>Status: Awaiting POP at acodesolutions@gmail.com</i>`;
+            const items = basket.map(i => `• ${i.name}`).join('\n');
+            const text = `🛠️ <b>NEW TOOL ORDER</b>\n━━━━━━━━━━━━━━\n👤 <b>Client:</b> ${name}\n📞 <b>Phone:</b> ${phone}\n💰 <b>Total:</b> ${total}\n\n📦 <b>ASSETS:</b>\n${items}\n━━━━━━━━━━━━━━\n<i>Awaiting POP to acodesolutions@gmail.com</i>`;
 
             try {
-                const response = await fetch(`https://api.telegram.org/bot${TG_TOKEN}/sendMessage`, {
+                const res = await fetch(`https://api.telegram.org/bot${TG_TOKEN}/sendMessage`, {
                     method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({
-                        chat_id: CHAT_ID,
-                        text: message,
-                        parse_mode: 'HTML'
-                    })
+                    headers: {'Content-Type': 'application/json'},
+                    body: JSON.stringify({ chat_id: CHAT_ID, text: text, parse_mode: 'HTML' })
                 });
 
-                if(response.ok) {
-                    alert(`SUCCESS! Your order has been logged.\n\nPlease pay ${total} into our FNB account and email your Proof of Payment to acodesolutions@gmail.com. Your digital assets will be dispatched immediately upon verification.`);
+                if(res.ok) {
+                    alert('Order Logged Successfully. Please complete the bank transfer to receive your tools.');
                     basket = [];
                     location.reload();
                 }
-            } catch (err) {
-                alert('Connection error. Please contact us via WhatsApp.');
-            } finally {
-                btn.innerText = "REQUEST DISPATCH & INVOICING";
-                btn.disabled = false;
-            }
+            } catch (err) { alert('Network Error'); }
+            finally { btn.innerText = "Submit Lead & Pay"; btn.disabled = false; }
         };
     </script>
 </body>
